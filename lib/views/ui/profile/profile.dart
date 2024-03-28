@@ -104,141 +104,142 @@ class _ProfileState extends State<Profile> {
         ],
       ),
       body: Column(children: [
-        Row(
-          children: [
-            Stack(
-              children: [
-                Container(
-                    padding: const EdgeInsets.all(3),
-                    decoration: const BoxDecoration(
-                        shape: BoxShape.circle, color: Colors.grey),
-                    child: _image != null
-                        ? CircleAvatar(
-                            radius: 50,
-                            backgroundImage: MemoryImage(_image!),
-                          )
-                        : const CircleAvatar(
-                            radius: 50,
-                            backgroundImage: NetworkImage(
-                                "https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_640.png"),
-                          )),
-                Positioned(
-                    top: 65,
-                    left: 65,
-                    child: Container(
-                      width: 40,
-                      height: 40,
-                      decoration: const BoxDecoration(
-                          shape: BoxShape.circle, color: Colors.green),
-                      child: IconButton(
-                          onPressed: () {
-                            // showModalBottomSheet(
-                            //     context: context,
-                            //     builder: (BuildContext context) {
-                            //       return Container(
-                            //         padding: const EdgeInsets.all(22),
-                            //         color: Colors.blue[200],
-                            //         height: 120,
-                            //         child: Row(
-                            //           mainAxisAlignment:
-                            //               MainAxisAlignment.spaceAround,
-                            //           children: [
-                            //             Container(
-                            //               decoration: BoxDecoration(
-                            //                   shape: BoxShape.circle,
-                            //                   color: Colors.blue[500]),
-                            //               child: IconButton(
-                            //                   onPressed: () async {
-                            //                     await uploadImage(
-                            //                         ImageSource.gallery);
-                            //                     if (imgPath != null) {
-                            //                       final storageRef =
-                            //                           FirebaseStorage.instance
-                            //                               .ref(imgName);
-                            //                       await storageRef
-                            //                           .putFile(imgPath!);
-                            //                       String url = await storageRef
-                            //                           .getDownloadURL();
-                            //                       users
-                            //                           .doc(credential!.uid)
-                            //                           .update({
-                            //                         "imageLink": url,
-                            //                       });
-                            //                     }
-                            //                   },
-                            //                   icon: const Icon(
-                            //                       Icons.add_photo_alternate)),
-                            //             ),
-                            //             const SizedBox(
-                            //               width: 22,
-                            //             ),
-                            //             Container(
-                            //               decoration: BoxDecoration(
-                            //                   shape: BoxShape.circle,
-                            //                   color: Colors.blue[500]),
-                            //               child: IconButton(
-                            //                   onPressed: () async {
-                            //                     await uploadImage(
-                            //                         ImageSource.camera);
-                            //                     if (imgPath != null) {
-                            //                       final storageRef =
-                            //                           FirebaseStorage.instance
-                            //                               .ref(imgName);
-                            //                       await storageRef
-                            //                           .putFile(imgPath!);
+        // Row(
+        //   children: [
+        //     Stack(
+        //       children: [
+        //         Container(
+        //             padding: const EdgeInsets.all(3),
+        //             decoration: const BoxDecoration(
+        //                 shape: BoxShape.circle, color: Colors.grey),
+        //             child: _image != null
+        //                 ? CircleAvatar(
+        //                     radius: 50,
+        //                     backgroundImage: MemoryImage(_image!),
+        //                   )
+        //                 : const CircleAvatar(
+        //                     radius: 50,
+        //                     backgroundImage: NetworkImage(
+        //                         "https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_640.png"),
+        //                   )),
+        //         Positioned(
+        //             top: 65,
+        //             left: 65,
+        //             child: Container(
+        //               width: 40,
+        //               height: 40,
+        //               decoration: const BoxDecoration(
+        //                   shape: BoxShape.circle, color: Colors.green),
+        //               child: IconButton(
+        //                   onPressed: () {
+        //                     // showModalBottomSheet(
+        //                     //     context: context,
+        //                     //     builder: (BuildContext context) {
+        //                     //       return Container(
+        //                     //         padding: const EdgeInsets.all(22),
+        //                     //         color: Colors.blue[200],
+        //                     //         height: 120,
+        //                     //         child: Row(
+        //                     //           mainAxisAlignment:
+        //                     //               MainAxisAlignment.spaceAround,
+        //                     //           children: [
+        //                     //             Container(
+        //                     //               decoration: BoxDecoration(
+        //                     //                   shape: BoxShape.circle,
+        //                     //                   color: Colors.blue[500]),
+        //                     //               child: IconButton(
+        //                     //                   onPressed: () async {
+        //                     //                     await uploadImage(
+        //                     //                         ImageSource.gallery);
+        //                     //                     if (imgPath != null) {
+        //                     //                       final storageRef =
+        //                     //                           FirebaseStorage.instance
+        //                     //                               .ref(imgName);
+        //                     //                       await storageRef
+        //                     //                           .putFile(imgPath!);
+        //                     //                       String url = await storageRef
+        //                     //                           .getDownloadURL();
+        //                     //                       users
+        //                     //                           .doc(credential!.uid)
+        //                     //                           .update({
+        //                     //                         "imageLink": url,
+        //                     //                       });
+        //                     //                     }
+        //                     //                   },
+        //                     //                   icon: const Icon(
+        //                     //                       Icons.add_photo_alternate)),
+        //                     //             ),
+        //                     //             const SizedBox(
+        //                     //               width: 22,
+        //                     //             ),
+        //                     //             Container(
+        //                     //               decoration: BoxDecoration(
+        //                     //                   shape: BoxShape.circle,
+        //                     //                   color: Colors.blue[500]),
+        //                     //               child: IconButton(
+        //                     //                   onPressed: () async {
+        //                     //                     await uploadImage(
+        //                     //                         ImageSource.camera);
+        //                     //                     if (imgPath != null) {
+        //                     //                       final storageRef =
+        //                     //                           FirebaseStorage.instance
+        //                     //                               .ref(imgName);
+        //                     //                       await storageRef
+        //                     //                           .putFile(imgPath!);
 
-                            //                       String url = await storageRef
-                            //                           .getDownloadURL();
-                            //                       users
-                            //                           .doc(credential!.uid)
-                            //                           .update({
-                            //                         "imgURL": url,
-                            //                       });
-                            //                     }
-                            //                     void onButtonTapped(
-                            //                         BuildContext context) {
-                            //                       Navigator.of(context).pop();
-                            //                     }
-                            //                   },
-                            //                   icon: const Icon(
-                            //                       Icons.add_a_photo_outlined)),
-                            //             ),
-                            //           ],
-                            //         ),
-                            //       );
-                            //     },
-                            //     isScrollControlled: true);
-                            setState(() {
-                              selectImage();
-                            });
-                          },
-                          color: Colors.white,
-                          icon: const Icon(Icons.add_a_photo_sharp)),
-                    )),
-              ],
-            ),
-            Column(
-              children: [
-                Text(
-                  "UserName",
-                  style: appstyle(18, Colors.black, FontWeight.w600),
-                ),
-                const SizedBox(
-                  height: 5,
-                ),
-                Text(
-                  "Email",
-                  style: appstyle(16, Colors.black, FontWeight.w500),
-                ),
-              ],
-            )
-          ],
-        ),
-        ElevatedButton(
-            onPressed: () {
-              saveProfile();
-            },
-            child: const Text("Save"))
+        //                     //                       String url = await storageRef
+        //                     //                           .getDownloadURL();
+        //                     //                       users
+        //                     //                           .doc(credential!.uid)
+        //                     //                           .update({
+        //                     //                         "imgURL": url,
+        //                     //                       });
+        //                     //                     }
+        //                     //                     void onButtonTapped(
+        //                     //                         BuildContext context) {
+        //                     //                       Navigator.of(context).pop();
+        //                     //                     }
+        //                     //                   },
+        //                     //                   icon: const Icon(
+        //                     //                       Icons.add_a_photo_outlined)),
+        //                     //             ),
+        //                     //           ],
+        //                     //         ),
+        //                     //       );
+        //                     //     },
+        //                     //     isScrollControlled: true);
+        //                     setState(() {
+        //                       selectImage();
+        //                     });
+        //                   },
+        //                   color: Colors.white,
+        //                   icon: const Icon(Icons.add_a_photo_sharp)),
+        //             )),
+        //       ],
+        //     ),
+        //     Column(
+        //       children: [
+        //         Text(
+        //           "UserName",
+        //           style: appstyle(18, Colors.black, FontWeight.w600),
+        //         ),
+        //         const SizedBox(
+        //           height: 5,
+        //         ),
+        //         Text(
+        //           "Email",
+        //           style: appstyle(16, Colors.black, FontWeight.w500),
+        //         ),
+        //       ],
+        //     )
+        //   ],
+        // ),
+        // ElevatedButton(
+        //     onPressed: () {
+        //       saveProfile();
+        //     },
+        //     child: const Text("Save"))
+    
       ]),
     );
   }
