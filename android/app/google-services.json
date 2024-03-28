@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "501579157196",
+    "project_id": "shoeapp-83928",
+    "storage_bucket": "shoeapp-83928.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:501579157196:android:1f1f448a7b5f4b622f7c69",
+        "android_client_info": {
+          "package_name": "com.example.sheoapp"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDQuzSdiCLr6Ah2vgcp8U4NMIWvYjLIkfc"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
