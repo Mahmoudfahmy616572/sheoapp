@@ -53,7 +53,6 @@ class _BuildDrawerState extends State<BuildDrawer> {
                         decoration: const BoxDecoration(),
                         child: SingleChildScrollView(
                           child: Column(
-
                             crossAxisAlignment: CrossAxisAlignment.start,
                             children: [
                               Container(
@@ -68,10 +67,12 @@ class _BuildDrawerState extends State<BuildDrawer> {
                               ),
                               Text(
                                 "${data['Name']}",
-                                style:
-                                    appstyle(18, Colors.white70, FontWeight.w700),
+                                style: appstyle(
+                                    18, Colors.white70, FontWeight.w700),
                               ),
-const SizedBox(height: 5,),
+                              const SizedBox(
+                                height: 5,
+                              ),
                               Text(
                                 " ${data['email']}",
                                 maxLines: 2,

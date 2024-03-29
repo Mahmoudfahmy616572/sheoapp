@@ -55,7 +55,6 @@ class _RegisterState extends State<Register> {
             .then((value) => showSnackBar(context, 'Successfully added'))
             .catchError((error) =>
                 showSnackBar(context, 'Failed to merge data: $error'));
-        showSnackBar(context, 'Successfully added');
 
         Navigator.push(context,
             MaterialPageRoute(builder: (context) => const MainScreen()));
@@ -182,7 +181,7 @@ class _RegisterState extends State<Register> {
                   OptionRegisterOrLogin(
                     txt: 'sign in',
                     onprss: () {
-                      Navigator.push(
+                      Navigator.pushReplacement(
                           context,
                           MaterialPageRoute(
                               builder: (context) => const Login()));

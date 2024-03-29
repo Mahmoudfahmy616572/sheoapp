@@ -104,6 +104,24 @@ class _ProfileState extends State<Profile> {
         ],
       ),
       body: Column(children: [
+        Center(
+          child: GestureDetector(
+            onTap: () async {
+              await FirebaseAuth.instance.signOut();
+              setState(() {});
+            },
+            child: Container(
+              padding: const EdgeInsets.all(10),
+              // width: 30,
+              // height: 30,
+              decoration: BoxDecoration(
+                color: Colors.red,
+                borderRadius: BorderRadius.circular(10),
+              ),
+              child: const Text("LogOut"),
+            ),
+          ),
+        )
         // Row(
         //   children: [
         //     Stack(
@@ -239,7 +257,6 @@ class _ProfileState extends State<Profile> {
         //       saveProfile();
         //     },
         //     child: const Text("Save"))
-    
       ]),
     );
   }

@@ -20,7 +20,7 @@ class Home extends StatefulWidget {
 class _HomeState extends State<Home> with TickerProviderStateMixin {
   final credential = FirebaseAuth.instance.currentUser;
   final userss = FirebaseAuth.instance.currentUser!;
-  CollectionReference users = FirebaseFirestore.instance.collection('userSSS');
+  CollectionReference users = FirebaseFirestore.instance.collection('users');
   var scaffoldKey = GlobalKey<ScaffoldState>();
 
   late final TabController _tabController =
@@ -55,6 +55,7 @@ class _HomeState extends State<Home> with TickerProviderStateMixin {
         backgroundColor: Color.fromRGBO(226, 226, 226, 1),
         drawer: BuildDrawer(
           documentId: credential!.uid,
+
         ),
         body: SizedBox(
           height: MediaQuery.of(context).size.height,

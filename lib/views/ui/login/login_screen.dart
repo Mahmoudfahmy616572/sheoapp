@@ -32,9 +32,9 @@ class _LoginState extends State<Login> {
         email: email.text,
         password: password.text,
       );
-      showSnackBar(context, "sign in successfully");
       Navigator.push(
           context, MaterialPageRoute(builder: (context) => const MainScreen()));
+      showSnackBar(context, "sign in successfully");
     } on FirebaseAuthException catch (e) {
       if (e.code == 'user-not-found') {
         showSnackBar(context, "'No user found for that email.'");
@@ -49,8 +49,8 @@ class _LoginState extends State<Login> {
 
   final _formKey = GlobalKey<FormState>();
 
-  Key _k1 = GlobalKey();
-  Key _k2 = GlobalKey();
+  final Key _k1 = GlobalKey();
+  final Key _k2 = GlobalKey();
 
   @override
   Widget build(BuildContext context) {
